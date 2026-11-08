@@ -75,7 +75,143 @@ Don't use Bitwig's built-in "Maschine Mk3" extension: on Linux it stops with "Ma
 supported on Linux". Bitwig remembers this setup: from then on, just plug the Maschine in, even
 with Bitwig already open.
 
-## 3. Check the hardware (5 minutes, once)
+## 3. Using the Maschine
+
+With the "Maschine Mk3 (Linux)" extension. "Hold X + Y" means keep X pressed and press Y.
+Pad 1 is bottom left, pad 16 top right.
+
+### Transport
+
+| Control | Action |
+|---|---|
+| PLAY | play / stop |
+| SHIFT + PLAY | restart from the start |
+| STOP | stop |
+| SHIFT + STOP | stop all clips |
+| REC | record (arranger or launcher, see Focus below) |
+| SHIFT + REC | launcher overdub on/off |
+| RESTART | restart from the start |
+| SHIFT + RESTART | arranger loop on/off |
+| TAP | tap tempo |
+| SHIFT + TAP | metronome on/off |
+| FOLLOW | follow the playhead |
+| SHIFT + FOLLOW | show/hide the clip launcher |
+| AUTO | show/hide automation lanes of the selected tracks |
+| SHIFT + AUTO | automation write on/off |
+| FILE | save the project |
+| SHIFT + FILE | open a project |
+
+Focus: in the controller's settings, "Recording/Automation" chooses whether REC and SHIFT + AUTO
+act on the arranger or on the clip launcher.
+
+### Pads and pad modes
+
+| Control | Action |
+|---|---|
+| PATTERN | pads launch clips (4 tracks × 4 scenes) |
+| SCENE | pads launch scenes |
+| PAD MODE | pads play the drum machine's pads, with their colours |
+| KEYBOARD | pads play notes in a scale; knobs: scale, octave, semitone, fixed velocity |
+| CHORDS | chord mode on/off: each pad plays a triad in the KEYBOARD scale |
+| STEP | step sequencer: pads are the steps; knobs: note, velocity, loop length, grid, note length |
+| FIXED VEL | fixed velocity on/off |
+| NOTE REPEAT (held) | arpeggiate the notes you play while held |
+| SHIFT + NOTE REPEAT | latched arpeggiator on/off; knobs: octaves, mode, rate, gate |
+
+Hold one of these and press a pad (or a group button for tracks):
+
+| Hold | + pad / group |
+|---|---|
+| SELECT | select without playing |
+| SOLO | solo |
+| MUTE | mute |
+| ERASE | erase (drum pad notes, clip, scene, track) |
+| DUPLICATE | duplicate (clip, scene, track) |
+
+A short tap on SELECT selects all / nothing in the focused panel; a short tap on DUPLICATE
+duplicates the selection.
+
+SHIFT + pads: 1 Undo, 2 Redo, 3 Step Undo, 4 Step Redo, 5 Quantize, 6 Quantize 50 %,
+7 Nudge ←, 8 Nudge →, 9 Clear, 10 Clear Auto, 11 Copy, 12 Paste, 13 Semitone −, 14 Semitone +,
+15 Octave −, 16 Octave +.
+
+### Tracks (group buttons A–H)
+
+| Control | Action |
+|---|---|
+| A–H | select a track (the button after the last track creates a new instrument track) |
+| SHIFT + A–H | jump between banks of 8 tracks (A = 1–8, B = 9–16…) |
+| SAMPLING | new audio track after the selected one, armed |
+| SHIFT + SAMPLING | new effect track |
+| LOCK | pin/unpin the selected track and device |
+
+### Displays, knobs and the buttons above the displays
+
+| Control | Action |
+|---|---|
+| MIXER | knobs = volume of 8 tracks; ◀ ▶ switch volume / pan / sends. Also shows/hides Bitwig's mixer panel |
+| SHIFT + MIXER | Bitwig's MIX view |
+| PLUG-IN | knobs = the selected device's 8 remote controls; ◀ ▶ change page. Buttons above: 1 bypass, 3 / 4 previous / next device |
+| SHIFT + PLUG-IN | open/close the plug-in's window |
+| MACRO (held) | finer knobs in device mode |
+| knobs | turn = change; touch = show the value on the display |
+| SHIFT + knob | 4× finer adjustment |
+
+Each display shows the names of its 4 knobs and their values underneath.
+
+### Browser
+
+| Control | Action |
+|---|---|
+| BROWSER | open the browser to add a device after the selected one (close it again with BROWSER) |
+| SHIFT + BROWSER | Bitwig's browser panel on the right |
+| knobs 1–7 | filters: location, file type, category, tag, creator, device type, device (since Bitwig 5 only category, tag and creator respond) |
+| knob 8 / big encoder | scroll the results |
+| push the big encoder | load the selected item |
+| button 4 above the displays | audition on/off |
+
+### Big 4D encoder
+
+| Control | Action |
+|---|---|
+| turn | depends on the mode (results in the browser, VOLUME / SWING / TEMPO below…) |
+| push | confirm (load in the browser) |
+| tilt ◀ ▶ ▲ ▼ | move through tracks and scenes |
+| VOLUME, then turn | main volume (SHIFT: finer) |
+| SWING, then turn | groove shuffle (SHIFT: accent) |
+| TEMPO, then turn | tempo (SHIFT: finer) |
+
+### Bitwig panels and views
+
+| Control | Action |
+|---|---|
+| ARRANGER | switch between the ARRANGE and MIX views |
+| SHIFT + ARRANGER | note editor |
+| NOTES | EDIT view |
+| EVENTS | detail editor |
+| SHIFT + EVENTS | EDIT view |
+| VARIATION | device panel |
+| CHANNEL | device panel |
+| MOD | the device's side panel (remote controls, modulators below) |
+| SETTINGS | inspector |
+| SHIFT + SETTINGS | project panel |
+
+### Touch strip and footswitch
+
+| Control | Action |
+|---|---|
+| PITCH | strip = pitch bend (springs back to the centre); press again to turn off |
+| PERFORM | strip = the selected device's 1st remote control; press again to turn off |
+| strip LEDs | position of the playing clip |
+| footswitch | sends CC 64 (not used by the extension yet) |
+
+### Driver
+
+| Control | Action |
+|---|---|
+| SHIFT + CHANNEL | MIDI mode off/on (the Maschine goes dark and stops sending) |
+
+## 4. Check the hardware (5 minutes, once)
 
 Stop the service first, so the driver releases the device:
 
