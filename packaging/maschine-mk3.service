@@ -1,0 +1,11 @@
+# Started by the udev rule (SYSTEMD_USER_WANTS) when the Maschine MK3 is plugged in, or when the
+# user session starts with it already plugged in. No need to enable it.
+[Unit]
+Description=Maschine MK3 driver for Bitwig Studio
+
+[Service]
+ExecStart=/usr/local/bin/maschine-mk3
+Restart=on-failure
+RestartSec=2
+# 3 = device not found (unplugged): stay stopped until udev starts the service again.
+RestartPreventExitStatus=3

@@ -1,0 +1,5 @@
+# Native Instruments Maschine MK3 (17cc:1600)
+# hidraw node (buttons, pads, LEDs): access for the logged-in user, and start the driver on plug-in.
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="17cc", ATTRS{idProduct}=="1600", TAG+="uaccess", TAG+="systemd", ENV{SYSTEMD_USER_WANTS}+="maschine-mk3.service"
+# USB device node (the two displays, through libusb).
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="17cc", ATTRS{idProduct}=="1600", TAG+="uaccess"

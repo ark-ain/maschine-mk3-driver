@@ -1,0 +1,15 @@
+[package]
+name = "maschine-mk3"
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+description = "Linux userspace driver: Maschine MK3 in MIDI mode for Bitwig Studio's Maschine Mk3 extension"
+
+[dependencies]
+alsa = "0.9"
+libc = "0.2"
+rusb = "0.9"
+embedded-graphics = "0.8"
+
+[profile.release]
+opt-level = 3
